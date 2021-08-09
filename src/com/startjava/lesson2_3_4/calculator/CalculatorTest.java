@@ -11,14 +11,10 @@ public class CalculatorTest {
             System.out.println("Введите математическое выражение: ");
             String value = scan.nextLine();
             String[] nums = value.split(" ");
-            int num1 = Integer.parseInt(nums[0]);
-            int num2 = Integer.parseInt(nums[2]);
-            String s = nums[1];
-            char sign = s.charAt(0);
 
 
             Calculator calculator = new Calculator();
-            calculator.calculate(num1, sign, num2);
+            calculator.calculate(nums);
 
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
