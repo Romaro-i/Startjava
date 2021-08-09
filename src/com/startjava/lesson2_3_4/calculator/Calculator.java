@@ -16,10 +16,7 @@ public class Calculator {
                 System.out.println("Результат деления: " + (num1 / num2));
                 break;
             case '^':
-                int result = 1;
-                for(int i = 0; i < num2; i++) {
-                    result *= num1;
-                }
+                double result = Math.pow(num1, num2);
                 System.out.println("Результат возведения в степень: " + result);
                 break;
         }

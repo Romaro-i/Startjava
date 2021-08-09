@@ -7,15 +7,15 @@ public class CalculatorTest {
         Scanner scan = new Scanner(System.in);
         String repeat = "y";
 
-         while("y".equalsIgnoreCase(repeat)) {
-            System.out.println("Введите первое число: ");
-            int num1 = scan.nextInt();
-
+        while ("y".equalsIgnoreCase(repeat)) {
             System.out.println("Введите математическое выражение: ");
-            char sign = scan.next().charAt(0);
+            String value = scan.nextLine();
+            String[] nums = value.split(" ");
+            int num1 = Integer.parseInt(nums[0]);
+            int num2 = Integer.parseInt(nums[2]);
+            String s = nums[1];
+            char sign = s.charAt(0);
 
-            System.out.println("Введите второе число: ");
-            int num2 = scan.nextInt();
 
             Calculator calculator = new Calculator();
             calculator.calculate(num1, sign, num2);
@@ -23,7 +23,7 @@ public class CalculatorTest {
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
                 repeat = scan.next();
-            } while(!"y".equalsIgnoreCase(repeat) && !"n".equalsIgnoreCase(repeat));
+            } while (!"y".equalsIgnoreCase(repeat) && !"n".equalsIgnoreCase(repeat));
         }
     }
 }
