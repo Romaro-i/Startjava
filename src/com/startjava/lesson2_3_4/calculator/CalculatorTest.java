@@ -9,16 +9,13 @@ public class CalculatorTest {
 
         while ("y".equalsIgnoreCase(repeat)) {
             System.out.println("Введите математическое выражение: ");
-            String value = scan.nextLine();
-            String[] nums = value.split(" ");
-
 
             Calculator calculator = new Calculator();
-            calculator.calculate(nums);
+            calculator.calculate(scan.nextLine());
 
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
-                repeat = scan.next();
+                repeat = scan.nextLine();
             } while (!"y".equalsIgnoreCase(repeat) && !"n".equalsIgnoreCase(repeat));
         }
     }
