@@ -6,13 +6,13 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String repeat = "y";
-
         while ("y".equalsIgnoreCase(repeat)) {
             System.out.println("Введите математическое выражение: ");
 
             Calculator calculator = new Calculator();
             calculator.calculate(scan.nextLine());
 
+            System.out.println(calculator.result);
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
                 repeat = scan.nextLine();

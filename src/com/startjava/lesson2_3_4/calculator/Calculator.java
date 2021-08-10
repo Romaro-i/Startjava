@@ -1,7 +1,8 @@
 package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
-    public void calculate(String value) {
+    int result;
+    public int calculate(String value) {
 
         String[] mathExpression = value.split(" ");
         int num1 = Integer.parseInt(mathExpression[0]);
@@ -9,21 +10,21 @@ public class Calculator {
         char sign = mathExpression[1].charAt(0);
         switch (sign) {
             case '+':
-                System.out.println("Результат сложения: " + (num1 + num2));
+                result = num1 + num2;
                 break;
             case '-':
-                System.out.println("Результат вычитания: " + (num1 - num2));
+                result = num1 - num2;
                 break;
             case '*':
-                System.out.println("Результат умножения: " + (num1 * num2));
+                result = num1 * num2;
                 break;
             case '/':
-                System.out.println("Результат деления: " + (num1 / num2));
+                result = num1 / num2;
                 break;
             case '^':
-                double result = Math.pow(num1, num2);
-                System.out.println("Результат возведения в степень: " + result);
+                result = (int) Math.pow(num1, num2);
                 break;
         }
+        return result;
     }
 }
