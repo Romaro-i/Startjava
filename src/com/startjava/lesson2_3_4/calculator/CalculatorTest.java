@@ -12,7 +12,7 @@ public class CalculatorTest {
             Calculator calculator = new Calculator();
             calculator.calculate(scan.nextLine());
 
-            System.out.println(calculator.result);
+            System.out.println(calculator.getResult());
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
                 repeat = scan.nextLine();

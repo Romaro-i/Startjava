@@ -1,9 +1,13 @@
 package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
-    int result;
-    public int calculate(String value) {
+    private int result;
 
+    public int getResult() {
+        return result;
+    }
+
+    public int calculate(String value) {
         String[] mathExpression = value.split(" ");
         int num1 = Integer.parseInt(mathExpression[0]);
         int num2 = Integer.parseInt(mathExpression[2]);
