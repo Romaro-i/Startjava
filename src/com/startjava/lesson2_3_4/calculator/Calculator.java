@@ -1,33 +1,24 @@
 package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
-    private int result;
+    int result;
 
-    public int getResult() {
-        return result;
-    }
-
-    public int calculate(String value) {
-        String[] mathExpression = value.split(" ");
-        int num1 = Integer.parseInt(mathExpression[0]);
-        int num2 = Integer.parseInt(mathExpression[2]);
-        char sign = mathExpression[1].charAt(0);
+    public int calculate(String mathExpression) {
+        String[] splitExpression = mathExpression.split(" ");
+        int num1 = Integer.parseInt(splitExpression[0]);
+        int num2 = Integer.parseInt(splitExpression[2]);
+        char sign = splitExpression[1].charAt(0);
         switch (sign) {
             case '+':
-                result = num1 + num2;
-                break;
+                return num1 + num2;
             case '-':
-                result = num1 - num2;
-                break;
+                return num1 - num2;
             case '*':
-                result = num1 * num2;
-                break;
+                return num1 * num2;
             case '/':
-                result = num1 / num2;
-                break;
+                return  num1 / num2;
             case '^':
-                result = (int) Math.pow(num1, num2);
-                break;
+                return (int) Math.pow(num1, num2);
         }
         return result;
     }

@@ -10,9 +10,9 @@ public class CalculatorTest {
             System.out.println("Введите математическое выражение: ");
 
             Calculator calculator = new Calculator();
-            calculator.calculate(scan.nextLine());
+            int result = calculator.calculate(scan.nextLine());
+            System.out.println(result);
 
-            System.out.println(calculator.getResult());
             do {
                 System.out.println("Вы хотите продолжить? [y/n]");
                 repeat = scan.nextLine();
