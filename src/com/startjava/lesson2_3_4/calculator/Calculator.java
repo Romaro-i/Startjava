@@ -1,8 +1,6 @@
 package com.startjava.lesson2_3_4.calculator;
 
 public class Calculator {
-    int result;
-
     public int calculate(String mathExpression) {
         String[] splitExpression = mathExpression.split(" ");
         int num1 = Integer.parseInt(splitExpression[0]);
@@ -19,7 +17,9 @@ public class Calculator {
                 return  num1 / num2;
             case '^':
                 return (int) Math.pow(num1, num2);
+            case '%':
+                return num1 % num2;
         }
-        return result;
+        return 0;
     }
 }
