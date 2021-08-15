@@ -26,4 +26,11 @@ public class Player {
     void clear() {
         Arrays.fill(nums, 0);
     }
+
+    void tryEnd() {
+        for(int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println(" - введённые числа игроком по имени " + getName());
+    }
 }

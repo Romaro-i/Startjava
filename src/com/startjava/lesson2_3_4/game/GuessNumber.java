@@ -74,9 +74,8 @@ public class GuessNumber {
 
             if(numOfTry == p1.nums.length) {
                 System.out.println("У игроков закончились попытки");
-                for(int i = 0; i < p1.nums.length; i++) {
-                    System.out.println(p1.nums[i]);
-                }
+                p1.tryEnd();
+                p2.tryEnd();
                 break;
             }
         }
