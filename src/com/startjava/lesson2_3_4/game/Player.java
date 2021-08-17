@@ -1,13 +1,15 @@
 package com.startjava.lesson2_3_4.game;
 
+import java.util.Scanner;
+
 import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int num;
-    int[] nums = new int[10];
+    private int[] nums = new int[10];
+    Scanner scan = new Scanner(System.in);
 
-    public Player(String name) {
+    public Player() {
         this.name = name;
     }
 
@@ -15,16 +17,22 @@ public class Player {
         return name;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNums() {
+        this.nums = nums;
     }
 
-    public int getNum() {
-        return num;
+    public int[] getNums() {
+        return nums;
+    }
+
+    public String enterName() {
+        System.out.println("Введите имя игрока: ");
+        name = scan.nextLine();
+        return  getName();
     }
 
     void clear() {
-        Arrays.fill(nums, 0);
+            Arrays.fill(nums, 0);
     }
 
     void tryEnd() {
