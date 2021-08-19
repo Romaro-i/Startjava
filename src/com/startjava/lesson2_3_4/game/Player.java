@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] nums = new int[10];
+    int numOfTry = 0;
     Scanner scan = new Scanner(System.in);
 
     public Player() {
@@ -31,14 +32,14 @@ public class Player {
         return  getName();
     }
 
-    void clear() {
-            Arrays.fill(nums, 0);
+    public int enterNum() {
+        System.out.println(getName() + " введите число");
+        getNums()[numOfTry] = scan.nextInt();
+        return numOfTry;
     }
 
-    void tryEnd() {
-        for(int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i] + " ");
-        }
-        System.out.println(" - введённые числа игроком по имени " + getName());
+    void clear() {
+        Arrays.fill(nums, 0, numOfTry, 0);
+        numOfTry = 0;
     }
 }
