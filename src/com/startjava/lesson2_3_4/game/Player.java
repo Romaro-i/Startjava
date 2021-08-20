@@ -19,7 +19,7 @@ public class Player {
     }
 
     public int[] getNums() {
-        return nums;
+        return Arrays.copyOfRange(nums, 0, numOfTry);
     }
 
     public int enterNum() {
