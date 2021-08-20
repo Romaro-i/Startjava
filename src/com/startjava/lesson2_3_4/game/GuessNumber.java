@@ -13,7 +13,7 @@ public class GuessNumber {
     }
 
     public void play() {
-        Scanner scan = new Scanner(System.in);
+
         int secretNum = (int) (Math.random() * 101);
         System.out.println("Загаданное число - " + secretNum);
 
@@ -68,9 +68,9 @@ public class GuessNumber {
             p2.numOfTry++;
 
             if(p1.numOfTry == p1.getNums().length) {
-                System.out.println("У игрока" + p1.getName() +" закончились попытки");
+                System.out.println("У игрока " + p1.getName() +" закончились попытки");
             } if(p2.numOfTry == p2.getNums().length) {
-                System.out.println("У игрока" + p2.getName() +" закончились попытки");
+                System.out.println("У игрока " + p2.getName() +" закончились попытки");
                 for(int i = 0; i < p1.getNums().length; i++) {
                     System.out.print(p1.getNums()[i] + " ");
                 }

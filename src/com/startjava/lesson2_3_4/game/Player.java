@@ -10,7 +10,7 @@ public class Player {
     int numOfTry = 0;
     Scanner scan = new Scanner(System.in);
 
-    public Player() {
+    public Player(String name) {
         this.name = name;
     }
 
@@ -18,18 +18,8 @@ public class Player {
         return name;
     }
 
-    public void setNums() {
-        this.nums = nums;
-    }
-
     public int[] getNums() {
         return nums;
-    }
-
-    public String enterName() {
-        System.out.println("Введите имя игрока: ");
-        name = scan.nextLine();
-        return  getName();
     }
 
     public int enterNum() {
