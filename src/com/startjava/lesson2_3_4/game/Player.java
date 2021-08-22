@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int[] nums = new int[10];
+    private int[] nums = new int[5];
     int numOfTry = 0;
     Scanner scan = new Scanner(System.in);
 
@@ -19,7 +19,7 @@ public class Player {
     }
 
     public int[] getNums() {
-        return Arrays.copyOfRange(nums, 0, numOfTry);
+        return nums;
     }
 
     public int enterNum() {

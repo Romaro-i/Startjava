@@ -10,8 +10,8 @@ public class GuessNumberTest {
 
         System.out.println("Приветствую Вас в игре - \"Угадай число от 0 до 100!\"");
 
-        Player p1 = new Player(enterName());
-        Player p2 = new Player(enterName());
+        Player p1 = createPlayer();
+        Player p2 = createPlayer();
 
         System.out.println("Mortal Kombat is begin!!! FIGHT!!!");
         System.out.println("У каждого из игроков всего 10 попыток, чтобы угадать загаданное число!!!");
@@ -28,8 +28,9 @@ public class GuessNumberTest {
         }
     }
 
-    public static String enterName() {
-        System.out.println("Введите имя игрока: ");
-        return scan.nextLine();
+    public static Player createPlayer() {
+        System.out.println("Введите имя игрока:");
+        Player player = new Player(scan.nextLine());
+         return new Player(player.getName());
     }
 }
