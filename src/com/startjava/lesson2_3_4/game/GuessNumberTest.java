@@ -30,7 +30,6 @@ public class GuessNumberTest {
 
     public static Player createPlayer() {
         System.out.println("Введите имя игрока:");
-        Player player = new Player(scan.nextLine());
-         return new Player(player.getName());
+        return new Player(scan.nextLine());
     }
 }

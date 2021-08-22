@@ -19,7 +19,8 @@ public class GuessNumber {
         System.out.println("Загаданное число - " + secretNum);
 
         while(true) {
-            p1.enterNum();
+            p1.getNums()[p1.numOfTry] = enterNum();
+
             if(p1.getNums()[p1.numOfTry] == secretNum) {
                 System.out.println("Игрок " + p1.getName() + " угадал загаданное число - " + secretNum + " с " + (p1.numOfTry + 1) + " попытки!");
                 int[] nums1 = Arrays.copyOfRange(p1.getNums(), 0, p1.numOfTry);
@@ -44,7 +45,7 @@ public class GuessNumber {
             p1.numOfTry++;
 
 
-            p2.enterNum();
+            p2.getNums()[p2.numOfTry] = enterNum();
             if(p2.getNums()[p2.numOfTry] == secretNum) {
                 System.out.println("Игрок " + p2.getName() + " угадал загаданное число - " + secretNum + " с " + (p2.numOfTry + 1) + " попытки!");
                 int[] nums1 = Arrays.copyOfRange(p1.getNums(), 0, p1.numOfTry);
@@ -85,5 +86,12 @@ public class GuessNumber {
                 break;
             }
         }
+    }
+
+    public int enterNum() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите число");
+        int number = scan.nextInt();
+        return number;
     }
 }

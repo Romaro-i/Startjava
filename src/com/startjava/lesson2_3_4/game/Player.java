@@ -22,12 +22,6 @@ public class Player {
         return nums;
     }
 
-    public int enterNum() {
-        System.out.println(getName() + " введите число");
-        getNums()[numOfTry] = scan.nextInt();
-        return numOfTry;
-    }
-
     void clear() {
         Arrays.fill(nums, 0, numOfTry, 0);
         numOfTry = 0;
