@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class GuessNumberTest {
     static Scanner scan = new Scanner(System.in);
 
-
     public static void main(String[] args) {
-
         System.out.println("Приветствую Вас в игре - \"Угадай число от 0 до 100!\"");
 
         Player p1 = createPlayer();
@@ -28,7 +26,7 @@ public class GuessNumberTest {
         }
     }
 
-    public static Player createPlayer() {
+    private static Player createPlayer() {
         System.out.println("Введите имя игрока:");
         return new Player(scan.nextLine());
     }
