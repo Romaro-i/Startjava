@@ -16,8 +16,7 @@ public class Player {
     }
 
     public int[] getNums() {
-        int[] copyOfNums = nums;
-        return  copyOfNums;
+        return  nums;
     }
 
     void clear() {

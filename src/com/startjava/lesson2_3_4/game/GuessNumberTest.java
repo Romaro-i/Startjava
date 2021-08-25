@@ -8,11 +8,11 @@ public class GuessNumberTest {
     public static void main(String[] args) {
         System.out.println("Приветствую Вас в игре - \"Угадай число от 0 до 100!\"");
 
-        Player p1 = createPlayer();
-        Player p2 = createPlayer();
+        Player p1 = createPlayer(1);
+        Player p2 = createPlayer(2);
 
         System.out.println("Mortal Kombat is begin!!! FIGHT!!!");
-        System.out.println("У каждого из игроков всего 10 попыток, чтобы угадать загаданное число!!!");
+        System.out.println("У каждого из игроков всего" + p1.getNums().length +" попыток, чтобы угадать загаданное число!!!");
 
         String playerAnswer = "yes";
         while("yes".equals(playerAnswer)) {
@@ -26,8 +26,8 @@ public class GuessNumberTest {
         }
     }
 
-    private static Player createPlayer() {
-        System.out.println("Введите имя игрока:");
+    private static Player createPlayer(int numOfPlayer) {
+        System.out.println(numOfPlayer + "-й игрок, введите имя:");
         return new Player(scan.nextLine());
     }
 }

@@ -18,68 +18,49 @@ public class GuessNumber {
         System.out.println("Загаданное число - " + secretNum);
 
         while(true) {
-            p1.getNums()[p1.numOfTry] = enterNum();
-            if(p1.getNums()[p1.numOfTry] == secretNum) {
-                getWin();
-                p1.clear();
-                p2.clear();
-                break;
-            } else if(p1.getNums()[p1.numOfTry] > secretNum ) {
-                System.out.println(p1.getName() + ", ваше число больше.");
-            } else if(p1.getNums()[p1.numOfTry] < secretNum) {
-                System.out.println(p1.getName() + ", ваше число меньше.");
+            checkNum(p1.getName(), p1.getNums(), p1.numOfTry, secretNum);
+            checkNum(p2.getName(), p2.getNums(), p2.numOfTry, secretNum);
             }
-            p1.numOfTry++;
-
-            p2.getNums()[p2.numOfTry] = enterNum();
-            if(p2.getNums()[p2.numOfTry] == secretNum) {
-                getWin();
-                p1.clear();
-                p2.clear();
-                break;
-            } else if(p2.getNums()[p2.numOfTry] > secretNum) {
-                System.out.println(p2.getName() + ", ваше число больше.");
-            } else if(p2.getNums()[p2.numOfTry] < secretNum) {
-                System.out.println(p2.getName() + ", ваше число меньше.");
-            }
-            p2.numOfTry++;
-
-            if(p1.numOfTry == p1.getNums().length) {
-                System.out.println("У игрока " + p1.getName() +" закончились попытки");
-            } if(p2.numOfTry == p2.getNums().length) {
-                System.out.println("У игрока " + p2.getName() +" закончились попытки");
-                for(int i = 0; i < p1.getNums().length; i++) {
-                    System.out.print(p1.getNums()[i] + " ");
-                }
-                System.out.println(" - введённые числа игроком по имени " + p1.getName());
-                for(int i = 0; i < p2.getNums().length; i++) {
-                    System.out.print(p2.getNums()[i] + " ");
-                }
-                System.out.println(" - введённые числа игроком по имени " + p2.getName());
-                p1.clear();
-                p2.clear();
-                break;
-            }
-        }
     }
 
-    public int enterNum() {
+
+    private int enterNum(String name) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Введите число");
+        System.out.println(name + " введите число");
         return scan.nextInt();
     }
 
-    public void getWin() {
-        System.out.println("Игрок угадал загаданное число с " + (p1.numOfTry + 1) + " попытки!");
-        int[] nums1 = Arrays.copyOfRange(p1.getNums(), 0, p1.numOfTry);
-        for (int j : nums1) {
-            System.out.print(j + " ");
+    private int checkNum(String name, int[] nums, int numOfTry, int secretNum) {
+        nums[numOfTry] = enterNum(name);
+        if(nums[numOfTry] == secretNum) {
+            System.out.println("Игрок " + name + " угадал загаданное число с " + (numOfTry + 1) + " попытки!");
+            int[] nums1 = Arrays.copyOfRange(p1.getNums(), 0, p1.numOfTry);
+            for (int j : nums1) {
+                System.out.print(j + " ");
+            }
+            System.out.println(" - введённые первым игроком числа");
+            int[] nums2 = Arrays.copyOfRange(p2.getNums(), 0, p2.numOfTry);
+            for (int j : nums2) {
+                System.out.print(j + " ");
+            }
+            System.out.println(" - введённые вторым игроком числа");
+            p1.clear();
+            p2.clear();
+            return nums[numOfTry];
+        } else if(nums[numOfTry] < secretNum) {
+            System.out.println(name + ", ваше число меньше.");
+        } else if (nums[numOfTry] > secretNum) {
+            System.out.println(name + ", ваше число больше.");
         }
-        System.out.println(" - введённые первым игроком числа");
-        int[] nums2 = Arrays.copyOfRange(p2.getNums(), 0, p2.numOfTry);
-        for (int j : nums2) {
-            System.out.print(j + " ");
+        numOfTry++;
+
+        if(nums[numOfTry] == nums.length) {
+            System.out.println("У игрока " + name +" закончились попытки");
+            for(int i = 0; i < p1.getNums().length; i++) {
+                System.out.print(p1.getNums()[i] + " ");
+            }
+            System.out.println(" - введённые игроком " + name + "числа");
         }
-        System.out.println(" - введённые вторым игроком числа");
+        return nums[numOfTry];
     }
 }
