@@ -3,8 +3,8 @@ package com.startjava.lesson2_3_4.game;
 import java.util.Arrays;
 
 public class Player {
-    private String name;
-    private int[] nums = new int[10];
+    private final String name;
+    private final int[] nums = new int[10];
     int numOfTry = 0;
 
     public Player(String name) {
