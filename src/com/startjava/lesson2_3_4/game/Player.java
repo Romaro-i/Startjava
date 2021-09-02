@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Player {
     private final String name;
-    private final int[] nums = new int[10];
-    int numOfTry = 0;
+    private int[] nums = new int[10];
+    private int numOfTry;
 
     public Player(String name) {
         this.name = name;
@@ -16,7 +16,15 @@ public class Player {
     }
 
     public int[] getNums() {
-        return  nums;
+        return Arrays.copyOf(nums, nums.length);
+    }
+
+    public void setNumOfTry(int numOfTry) {
+        this.numOfTry = numOfTry;
+    }
+
+    public int getNumOfTry() {
+        return numOfTry;
     }
 
     void clear() {

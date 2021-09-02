@@ -11,9 +11,6 @@ public class GuessNumberTest {
         Player p1 = createPlayer(1);
         Player p2 = createPlayer(2);
 
-        System.out.println("Mortal Kombat is begin!!! FIGHT!!!");
-        System.out.println("У каждого из игроков всего " + p1.getNums().length +" попыток, чтобы угадать загаданное число!!!");
-
         String playerAnswer = "yes";
         while("yes".equals(playerAnswer)) {
             GuessNumber game = new GuessNumber(p1, p2);
