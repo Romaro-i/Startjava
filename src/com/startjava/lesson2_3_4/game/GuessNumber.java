@@ -40,7 +40,7 @@ public class GuessNumber {
     private void enterNum(Player player) {
         Scanner scan = new Scanner(System.in);
         System.out.println(player.getName() + " введите число");
-        player.getNums()[player.getNumOfTry()] = scan.nextInt();
+        player.setNums(scan.nextInt());
     }
 
     private boolean checkNum(Player player, int secretNum) {
