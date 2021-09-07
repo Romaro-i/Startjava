@@ -15,7 +15,7 @@ public class GuessNumber {
 
     public void play() {
         int secretNum = (int) (Math.random() * 101);
-        System.out.println("У каждого из игроков всего " + p1.getNums().length + " попыток, чтобы угадать загаданное число!!!");
+        System.out.println("У каждого из игроков всего 10 попыток, чтобы угадать загаданное число!!!");
         System.out.println("Загаданное число - " + secretNum);
         System.out.println("Mortal Kombat is begin!!! FIGHT!!!");
 
@@ -41,22 +41,22 @@ public class GuessNumber {
         Scanner scan = new Scanner(System.in);
         System.out.println(player.getName() + " введите число");
         player.setNums(scan.nextInt());
+        player.setNumOfTry(player.getNumOfTry() + 1);
     }
 
     private boolean checkNum(Player player, int secretNum) {
-        if(player.getNums()[player.getNumOfTry()] == secretNum) {
+        if(player.getNums()[player.getNumOfTry() - 1] == secretNum) {
             System.out.println("Игрок " + player.getName() + " угадал загаданное число с " + (player.getNumOfTry() + 1) + " попытки!");
             showEnteredNumbers(p1);
             showEnteredNumbers(p2);
             p1.clear();
             p2.clear();
             return true;
-        } else if(player.getNums()[player.getNumOfTry()] < secretNum) {
+        } else if(player.getNums()[player.getNumOfTry() - 1] < secretNum) {
             System.out.println(player.getName() + ", ваше число меньше.");
-        } else if (player.getNums()[player.getNumOfTry()] > secretNum) {
+        } else if (player.getNums()[player.getNumOfTry() - 1] > secretNum) {
             System.out.println(player.getName() + ", ваше число больше.");
         }
-        player.setNumOfTry(player.getNumOfTry() + 1);
         return false;
     }
 
