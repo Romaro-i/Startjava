@@ -14,7 +14,7 @@ public class GuessNumber {
 
     public void play() {
         secretNum = (int) (Math.random() * 101);
-        System.out.println("У каждого из игроков всего 5 попыток, чтобы угадать загаданное число!!!");
+        System.out.println("У каждого из игроков всего " + p1.getNumOfAttempts() + " попыток, чтобы угадать загаданное число!!!");
         System.out.println("Загаданное число - " + secretNum);
         System.out.println("Mortal Kombat is begin!!! FIGHT!!!");
 
@@ -64,9 +64,9 @@ public class GuessNumber {
     }
 
     private boolean tryesEnd() {
-        if (p2.getNumOfTry() < 5) {
+        if (p2.getNumOfTry() < p1.getNumOfAttempts()) {
             return true;
-        } if (p2.getNumOfTry() == 5) {
+        } if (p2.getNumOfTry() == p1.getNumOfAttempts()) {
             System.out.println("У игроков закончились попытки!");
             System.out.println("Число, которое надо было угадать - " + secretNum);
         } return false;
