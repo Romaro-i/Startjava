@@ -15,12 +15,12 @@ public class Player {
         return name;
     }
 
-    public void setNums(int num) {
-        this.nums[numOfTry] = num;
+    public void setNum(int num) {
+        nums[numOfTry] = num;
     }
 
     public int[] getNums() {
-        return Arrays.copyOf(nums, numOfTry - 1);
+        return  Arrays.copyOf(nums, numOfTry);
     }
 
     public void setNumOfTry(int numOfTry) {
@@ -29,6 +29,10 @@ public class Player {
 
     public int getNumOfTry() {
         return numOfTry;
+    }
+
+    public int getLastNum() {
+        return nums[numOfTry - 1];
     }
 
     void clear() {
